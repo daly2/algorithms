@@ -1,0 +1,15 @@
+Arguments: a pointer to the first element of an array, an integer number of
+elements in the array
+
+Return: a pointer to the first element of the sorted array
+
+State change: pick a random integer x such that 0<=x<size of array
+            find how many numbers are larger than original array[x],
+            copy x to the correct index of a new array, then copy the
+            rest of the array to their positions in relation to x, while
+            otherwise maintaining order
+            ie, if an element is smaller than x it goes before x, and maintains
+            its index if possible
+            repeat until sorted
+        Note: extremely inefficient, uses way more memory than is practical,
+            and is not gaurenteed to be complete
