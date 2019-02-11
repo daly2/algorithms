@@ -121,17 +121,17 @@ main:
 	call	_Z11start_timerv
 	movsd	.LC0(%rip), %xmm0
 	movsd	%xmm0, -24(%rbp)
-	movl	$0, -28(%rbp)
-.L10:
+	movl	$0, -28(%rbp);initializes i to 0
+.L10:	;this is the beginning of the for loop
 	movl	-32(%rbp), %eax
-	cmpl	%eax, -28(%rbp)
-	jge	.L9
+	cmpl	%eax, -28(%rbp)	;these two lines are the guard, checking that i<numiters
+	jge	.L9	;exits the loop if the guard is false
 	movsd	-24(%rbp), %xmm1
 	movsd	.LC1(%rip), %xmm0
-	addsd	%xmm1, %xmm0
+	addsd	%xmm1, %xmm0	; adds 2 to a
 	movsd	%xmm0, -24(%rbp)
-	addl	$1, -28(%rbp)
-	jmp	.L10
+	addl	$1, -28(%rbp)	; adds 1 to i
+	jmp	.L10	;This jumps back to the start of the loop
 .L9:
 	call	_Z12elapsed_timev
 	movq	%xmm0, %rax

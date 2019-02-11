@@ -1,0 +1,9 @@
+Because I was in hardware last semester, I used my worksheets
+from class, internet research, and a little bit of the book 
+provided to refresh my memory of assembly.
+Internet research was necessary because hardware is taught with
+arm assembly, and the book provided appears to also be for arm.
+
+I compiled on my own machine, which is x86-64, same as the lab
+machines, however I am not sure if the operating system difference
+of ubuntu will be an issue.
