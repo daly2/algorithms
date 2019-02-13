@@ -1,0 +1,14 @@
+It appears that the slowest part is the
+loop, simply because it is repeated 500
+times. However from prior experiance I
+know that cout is quite slow, so tha
+would be my second option.
+
+The actual addition and assignment in the
+loop take the same number of cycles, one
+per loop.
+The initialization doesn't actually take
+place until there are values assigned, so
+that part takes no time.
+The only possible load from memory is with
+the function call to cout, which is hidden.
