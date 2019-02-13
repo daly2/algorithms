@@ -1,0 +1,5 @@
+1. Dividing requires the most time
+2. Much higher cost when memory is involved, as registers are directly on the cpu
+    whereas memory is not.
+3. Most instructions have higher latency, because the reciporcal throughput takes
+    into account instructions that are completed in parrallel.
