@@ -1,0 +1,6 @@
+I tested example 9, at 1392 cycles
+for ( int i = 0; i <= n; ++i ) {
+  for ( int j = 0; j <= i/2; ++j ) {
+    i = i + 1;
+  }
+};
