@@ -43,7 +43,7 @@
         }
     };
     The caluclation of x is done once, and threrefore is insignificant to the total runtime.
-    The inner loop has one addition one memeroy access and one jump for a total of 5 cycles
+    The inner loop has one addition one memory access and one jump for a total of 5 cycles
     the inner loop runs for an average of 50 iterations / 250 cycles per outer loop
     The outer loop contains the inner loop, a jump, and an addition, for 253 cycles per iteration
     The outer loop iterates 101 times for a total of about 27000 cycles.
@@ -99,11 +99,11 @@
         }
     };
     k loop has 1 multiplication, 1 add, 1 jump, and 1 comparison for 9 cycles per iteration
-    k loop iterates 4 times on average for 28 cycles
-    j loop has 1 add, 1 jump, 1 memeroy access, and k loop for 32 cycles per iteration
-    j loop iterates 50 times on average for 160 cycles
-    i loop has 2 memory accesses, 1 add, 1 jump, and j loop for 170 cycles per iteration
-    i loop iterates 101 times for a total of about 17,170 cycles.
+    k loop iterates 6 times on average for 54 cycles
+    j loop has 1 add, 1 jump, 1 memory access, and k loop for 60 cycles per iteration
+    j loop iterates 50 times on average for 3000 cycles
+    i loop has 2 memory accesses, 1 add, 1 jump, and j loop for 3009 cycles per iteration
+    i loop iterates 101 times for a total of about 303,909 cycles.
 11.
     for ( int i = 0; i <= n; ++i ) {
         for ( int j = 0; j <= i; ++j ) {
