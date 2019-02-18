@@ -1,0 +1,168 @@
+1.
+    for ( int i = 0; i < n; ++i ) {
+        x = 2+3;
+    }
+    T(100) = 976
+    T(1000)=9760
+2.
+
+    for ( int i = 0; i < n; ++i ) {
+        for ( int j = 0; j < n/2; ++j ) {
+            x = sin(.32);
+        }
+    }
+    T(100) = 34984
+    T(1000) = 3498400
+3.
+    for ( int i = 0; i < n; ++i ) {
+        for ( int j = 0; j < i; ++j ) {
+            x = 32*sin(.32);
+        }
+    }
+    T(100) = 52016
+    T(1000)= 5,201,600
+4.
+    for ( int i = 0; i < n; ++i ) {
+        for ( int j = i; j < n; ++j ) {
+            x = 38 + 29*(348*tan(.328));
+        }
+    }
+    T(100) = 36376
+    T(1000)= 3637600
+5.
+    for ( int i = 0; i < n; ++i ) {
+        for ( int j = 0; j < i/2; ++j ) {
+            x = 2398 * 2948 + 3498 * 3948 + 39843 * atan2(32,49);
+        }
+        i = i + 2;
+    }
+    T(100) = 9088
+    T(1000)=908800
+6.
+    for ( int i = 0; i < n; ++i ) {
+        for ( int j = 0; j < n/2; ++j ) {
+            for ( int k = 0; k < n; ++k ) {
+                x = 5*x - 4;
+            }
+        }
+    }
+    T(100) = 7107660
+    T(1000)= 7107660000
+7.
+    for ( int i = 0; i < n; ++i ) {
+        for ( int j = 0; j < i; ++j ) {
+            for ( int k = 0; k < j; ++k ) {
+                x = x + 5;
+            }
+        }
+    }
+    T(100) = 1552300
+    T(1000)= 1552300000
+8.
+    for ( int i = 0; i < n; ++i ) {
+        for ( int j = 0; j < i/2; ++j ) {
+            for ( int k = 0; k < j; ++k ) {
+                x = x + 5;
+            }
+        }
+    }
+    T(100) =529056
+    T(1000)=529056000
+
+
+Recursive Calls
+1.
+    void recursion(int n)
+    {
+        double x = 2 * 3;
+        x = x * 3;
+
+        if (n > 0)
+        recursion(n - 1);
+    }
+    T(100)=1300
+    Because the function is called 100 times it takes 100*13 cycles.
+2.
+    void recursion(int n)
+    {
+        double x = 2 * 3;
+        x = x * 3;
+ 
+        if (n > 0)
+            recursion(n/2);
+    }
+    T(100)=250
+    The function takes 25 cycles and runs 10 times.
+3.
+    void recursion(int n)
+    {
+        double x = 2 * 3;
+        x = x * 3;
+
+        if (n > 0)
+        recursion(n/3);
+    }
+    T(100) = 112
+    The function runs 4 times for 27 cycles each.
+4.
+    void recursion(int n)
+    {
+        double x = 2 * 3;
+        for ( int i = 0; i < n; ++i ) {
+            x = 2+3;
+        }
+ 
+        if (n > 0)
+            recursion(n/2);
+    }
+    T(100)=1400
+    The function repeats 10 times and the loop repeats on average 28 times
+    5 cycles per loop*28*10
+5.
+    void recursion(int n)
+    {
+        double x = 2 * 3;
+        for ( int i = 0; i < n; ++i ) {
+            for ( int j = 0; j < i; ++j ) {
+                x = 32*sin(.32);
+            }
+        }
+ 
+        if (n > 0)
+            recursion(n/2);
+    }
+    T(100)=25,000
+    The sum of n(n-1)/2, n =1,3,6,12,25,50,100
+    and about 5 cycles per loop
+6.
+    void recursion(int n)
+    {
+        double x = 2 * 3;
+        for ( int i = 0; i < n; ++i ) {
+            for ( int j = 0; j < n/2; ++j ) {
+                for ( int k = 0; k < n; ++k ) {
+                    x = 5*x - 4;
+                }
+            }
+        }
+ 
+        if (n > 0)
+            recursion(n/3);
+    }
+    T(100)= 5,000,000
+    The sum of n(n/2)(n)(10), n=100,33,11,3,1
+    at about 10 cycles per loop
+7.
+    void recursion(int n)
+    {
+        double x = 2 * 3;
+        x = x * 3;
+ 
+        if (n > 0) {
+            recursion(n/2);
+            recursion(n/2);
+        }
+    }
+    T(100)=2800
+    2^log2(n)=14 is the number of times the function gets called
+    function takes about 200 cycles because the division must be redone each times
