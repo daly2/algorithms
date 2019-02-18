@@ -163,6 +163,6 @@ Recursive Calls
             recursion(n/2);
         }
     }
-    T(100)=2800
-    2^log2(n)=14 is the number of times the function gets called
-    function takes about 200 cycles because the division must be redone each times
+    T(100)=3200
+    2^log2(n)=128 is the number of times the function gets called
+    function takes about 25 cycles per call because of the division
