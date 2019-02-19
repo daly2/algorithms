@@ -1,0 +1,4 @@
+recursion 8
+tested at 15000
+for loop 7
+tested at 8.29921e+8
