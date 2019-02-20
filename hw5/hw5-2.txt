@@ -22,7 +22,7 @@
         }
     }
     T(100)=3000
-    The function should be called 2^(log2(n))=128 times at about 24 cycles each.
+    The function should be called 2^(log2(n)+1)-1=255 times at about 24 cycles each.
 3.
     void recursion(int n)
     {
@@ -36,7 +36,7 @@
         }
     }
     T(100)=32800
-    The branching factor is 3 so (3^(log2(n))-1)/2=3280 function calls at 10 cycles each
+    The branching factor is 3 so (3^(log2(n)+1)-1)/2=3280 function calls at 10 cycles each
 4.
     void recursion(int n)
     {
