@@ -1,0 +1,34 @@
+1.  
+    A loop where the loop variable is incremented n times, and the body of the loop contains some
+    trig computation that is not related to the loop variable.)
+    n*7
+    Because the trig is not related to the loop variable, it is only performed once
+    Therefore, each iteration is about 7 cycles
+2.  
+    A loop where the loop variable is incremented n times, and the body of the loop contains some
+    trig computation that ** is** related to the loop variable.)
+    n*60
+    The loop is iterated n times and trig is performed each time at 50 cycles each
+3.  A double loop where the outer loop variable is incremented n times, the inner loop variable is
+    incremented n/3 times, and the body of the inner loop contains an array lookup and an assignment into another array.)
+    n^2/3*13
+    The innermost line is repeated n^2/3 times and takes about 13 cycles per iteration
+4.
+    A double loop where the outer loop increments the outer loop variable, and the inner loop increments both the
+    inner and outer loop variables.
+    assuming all variables go 0 to n
+    n*8
+    Because the inner loop increments the outer loop variable, the outer loop only runs for
+    one iteration.
+    Therefore we only have the runtime of the inner loop.
+5.
+    A triple loop where each loop variable goes from zero to n
+    n^3*10
+    n*n*n runs of the innermost line, and that should take about 10 cycles after loop maintence.
+6.
+    A recursive function that calls itself once if the incoming integer is greater than some 
+    fixed value. (How will this change depending on the values difference between each recursion? 
+    n/2 vs n-1?
+    if it calls itself with n, it will never terminate
+    if it calls itself with n-1 it will be n*10, the same as a loop from 0 to n
+    if it calls itself with n/2 it will be (log_2(n))*10
