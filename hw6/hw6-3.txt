@@ -1,0 +1,19 @@
+I timed example 5 from part b becasue it was the one I was least sure about
+int n=100
+void recursion(int n)
+{
+  double x = 2 * 3;
+  x = x * 3;
+ 
+  if (n > 0) {
+    recursion(n/2);
+    recursion(n/3);
+  }
+}
+
+This took 1734 cycles
+and 108 function calls
+my formula: (2^((log_2(n)+log_3(n))/2+1)-1)*10
+returns 844 cycles over 84 function calls
+This is low by more than a factor of 2, and I know my formula is incorrect.
+However, I also was not able to come up with a more reasonable formula.

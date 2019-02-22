@@ -67,8 +67,7 @@ void recursion(int n)
     recursion(n/3);
   }
 }
-(log_2(n)+1)*(log_3(n)+1)*12
-not really sure, seems reasonable, doesn't work, 108 function calls with n =100
+(2^((log_2(n)+log_3(n))/2+1)-1)*10
 
 6.
 void recursion(int n)
