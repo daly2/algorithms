@@ -9,7 +9,7 @@ vector<int> initializeVec(int N)
     // initialize an array with random values
     vector<int> vec;
     for (auto it = 0; it < N; ++it)
-        vec.emplace_back(rand() % 10000);
+        vec.emplace_back(rand()%99999999);
     return vec;
 }
 
@@ -33,7 +33,7 @@ int findMax(vector<int> vec)
     return max;
 }
 
-vector<int> mySort(vector<int> vec, int N)
+vector <int> mySort(vector<int> vec, int N)
 {
     int max = findMax(vec);
     vector<int> vec2;
