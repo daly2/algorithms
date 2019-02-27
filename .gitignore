@@ -1,4 +1,5 @@
 **/*
+!.gitignore
 !**/*.cpp
 !**/*.s
 !**/Makefile
@@ -7,4 +8,4 @@
 !**/*.pl
 !**/*.txt
 !**/*.*
-!.gitignore
+
