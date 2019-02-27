@@ -1,10 +1,10 @@
-*
+**/*
 !**/*.cpp
 !**/*.s
-!Makefile
-!*.c
-!*.py
-!*.pl
-!*.txt
-!*.*
+!**/Makefile
+!**/*.c
+!**/*.py
+!**/*.pl
+!**/*.txt
+!**/*.*
 !.gitignore
