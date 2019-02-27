@@ -2,12 +2,12 @@
 !*.*
 !*/
 !.gitignore
-!**/*.cpp
-!**/*.s
-!**/Makefile
-!**/*.c
-!**/*.py
-!**/*.pl
+!*.cpp
+!*.s
+!*akefile*
+!*.c
+!*.py
+!*.pl
 !*.txt
-!**/*.*
+!*.*
 
