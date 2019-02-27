@@ -13,7 +13,24 @@
 5.
     500n+500 is not omega(n^2) for any c because
     (500n+500)/c(n^2)=(500n)/(cn^2)+500/(cn^2)=500/(cn)+500/(cn^2)
-    does not have a solution for all n.
+    does not have a solution for all n(ie. there is still a varoiable).
 6.
-    
-    
+    500n+500 is theta(n)
+    since 500n+500 is omega(n+1) and O(n)
+7.
+    2n^2+1000 is not theta(n) because it is not O(n)
+    ie. (2n^2+1000)/(n)=(2n+(1000/n))
+    we take the limit as n goes to infinity and get
+    2n+0!=c for any integer c, therefore it is not O(n).
+8.
+    Show that,if c is a positive real number, then g(n) = 1 +c+c^2+...+c^n is
+        (a)theta(1) if c <1
+        if c<1, then the geometric series ((c^(n+1)-1)/(c-1) as n goes to infinity
+        c^(n+1) goes to 0 and we have -1/(c-1) which differs from 1 by a common factor
+        (b)theta(n) if c= 1
+        the geometric series goes to n if c =1 because the c's all cancel and we have
+        n+1, which is n
+        (c)theta(c^n)if c >1
+        if c>1 then c-1 is a common factor, disregard, -1 is a constant disreagad,
+        and c^(n+1)=c*c^n, c is a constant, disreagad.
+        
