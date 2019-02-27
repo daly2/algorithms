@@ -1,0 +1,11 @@
+1.
+    fastest for small n: 10n^2+50n+4
+2.
+    fastest for larg n: 500n+500
+3.
+    The runtime of 500n+500 is preferable, because although the cost with small n
+    is greater than the other two options, its not as significant. The main cost
+    is when n is large.
+4.
+    The runtimes should be nearly language independent, some constants and coefficients
+    might change some, but the overall runtime should not, as long as you do the same things.

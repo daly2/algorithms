@@ -1,0 +1,19 @@
+1.  There is a way to compute the fib series with matrix powers, however I do not
+    know how to implement it. It should be significantly faster than n^2 though.
+2.  (500n+500)/n=(500+500/n)<=1000
+    Therefore for some c=1000 cn>=500n+500 for all n and O(n)=O(500n+500)
+
+3.  2n^2+1000!=O(n)
+    (2n^2+1000)/n=2n+(1000/n)!=c for any integer c.
+    since they do not differ by a comon factor, they are not the same in terms of O()
+
+4,
+    500n+500 is omega(n+1) for c=499
+    c(n+1)=499(n+1)=499n+499<500n+500
+5.
+    500n+500 is not omega(n^2) for any c because
+    (500n+500)/c(n^2)=(500n)/(cn^2)+500/(cn^2)=500/(cn)+500/(cn^2)
+    does not have a solution for all n.
+6.
+    
+    
