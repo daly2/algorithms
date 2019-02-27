@@ -1,4 +1,8 @@
-hw1/Exercises-q1-onetoten
-hw1/Sorting-q3-algorithm
-hw1/a_loop
-hw1/Sorting-q4-algorithm
+*
+!*.cpp
+!*.s
+!Makefile
+!*.c
+!*.py
+!*.pl
+!.gitignore
