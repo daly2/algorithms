@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int fib(int a)
+unsigned long long fib(int a)
 {
     if(a<=1)return a;
     else{
