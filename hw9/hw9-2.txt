@@ -1,0 +1,69 @@
+1.1
+    The significance of a digit is a*b^i with i as the index of the digit,
+    and a as the value(a<b).
+    Therefore a*b^0 +a*b^0+a*b^0=3*a<b^2=b*b for any natural number b>=2.
+1.3
+    show d-ary tree with n nodes has depth >= Omega(log(n)/log(d))
+    ie. depth>=c*(log(n)/log(d)) for some c in R.
+    This simplifies to depth>=c*(log_d(n)).
+    This is true because each node can have d childern, and so forth.
+    The percise formula is ((d^(log_d(n+1))-1)/(d-1)=depth of fully populated tree.
+1.4
+    show log(n!)=theta(n*log(n))
+    ie. log(n!)>=c*(n*log(n)) and log(n!)<=c(n*log(n)) for some c's in R
+    n log(n)=log(n^n)
+    so the logs cancel and we have n! compared to c(n^n).
+    case 1 upper bound:
+        n!<=c*n^n for c=1.
+        because they have the same number of factors, but the values go to 1 for
+        n! and they are constant for n^n.
+    case 2 lower bound:
+        n!>=c*((n/2)^(n/2)) for c=1
+    therefore log(n!)=theta(n*log(n))
+1.6
+    Since this is simply seperating it out into multiple multiplications and
+    adding them up, it works for all binary numbers.
+1.8
+    It follows the division algorithm exactly, therefore it is correct.
+    it gets called n(x and y are n bits) times and has a multiplication or 
+    addition per call which leads to n things n times, n^2.
+
+1.9
+    x==xP mod n, y==yP mod n,=>x+y==xP+yP mod n
+    x==xP mod n => n|x-xP
+    y==yP mod n => n|y-yP
+    x+y==xP+yP mod n=> n|(x+y)-(xP+yP)
+    n|a ^ n|b => n|a-b
+1.11
+    yes
+    divisible by 35 is the same as divisible by 5 and 7
+    4 ==-1 mod 5 ^ 9==-1 mod 5
+    therefore it is -1^(even exponent)- -1^(even exponent) =0 therefore 5|(4^(1536)-9^(4824))
+
+    4^1536==2^768==8^256==1^256==1 mod 7
+    9^4824==2^4824==8^1608==1^1608==1 mod 7
+    1-1=0
+    Therefore 35|(4^(1536)-9^(4824))
+
+1.13
+    5^30000-6^123456 mod 31
+    5^30==1 mod 31
+    6^123450==1 mod 31
+    6^6==1 mod 31
+    both are 1 mod 31 so their difference is divisible by 31
+    
+1.17
+    The iterative algorithm x^y
+        y-1 multiplications at O(mn) each, y <2^(n+1)-1
+        the constants get dropped, and 2^n dominates so O(2^n)
+1.18
+    gcd(210,588)
+        factors 210:2*105 =2*5*21=2*5*7*3
+        factors 588:2*294=2*3*98=2*3*2*7*7
+        common factors:2,3,7
+        gcd=42
+    gcd(210,588)
+        588=2*210+168
+        210=1*168+42
+        168=4*42+0
+        gcd=42

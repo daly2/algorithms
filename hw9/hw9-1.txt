@@ -1,0 +1,25 @@
+1.  Prove or disprove:  18 n^3 = Omega(500 n^2)
+    Prove
+    We want to find some c such that 18n^3>=c(500n^2).
+    To do this we use the fraction:(18n^3)/(500n^2).
+    The n^2 cancels: (18n)/500>=c, the smallest n will be is 1.
+    therefore c can be 18/500 or greater.
+
+2.  Prove or disprove:  2n * log n = O(n)
+    disprove 
+    Well, we can use the fraction (2n*log(n))/n, which can be simplified to
+    (2*log(n)) which goes to infinity as n becomes large, therefore no c exists for which c*n is
+    greater than 2n*log(n) for all n.
+3.  Prove or disprove:  if f(n) = O(g(n)), then 2*f(n) = O(g(n))
+    Prove
+    If f(n)=O(g(n)) then f(n)<=c(g(n)) for some c.
+    Therefore 2*f(n)<=2*c(g(n)), and 2*f(n) = O(g(n)).
+
+4.  Prove or disprove:  if f(n) = O(g(n)), then g(n) = O(f(n))
+    Disprove if f(n)=n and g(n)=n^2:
+    n=O(n^2)
+    because (n/(n^2))=(1/n) which is always less than or equal 1 so c>=1.
+    however,
+    n^2!=O(n)
+    because (n^2)/n=n/1=n so as n goes to infinity there is no constant c greater
+    than n.
