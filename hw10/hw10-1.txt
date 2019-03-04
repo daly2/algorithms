@@ -1,0 +1,43 @@
+Exercise 2.1
+
+Exercise 2.2.
+    suppose b,n exist in Z+, we want to show n<b^k<bn for some k in R.
+    Well log_b(bn)=log_b(b)+log_b(n)=log_b(n)+1 and k*log_b(b)=k.
+    now we have log_b(n)<k<log_b(n)+1.
+    Therefore there must be some k such that n<b^k<bn is true for all b, n in Z+
+Exercise 2.3.
+    a.
+        T(n)<=3^kT(n/(2^k))+O(n)
+        k=log_2(n) should get the sum
+    b.
+        T(n)<=(n-k)+O(1)
+        k=0 for the sum
+Exercise 2.4.
+    a.
+        n, a=5,b=2,d=1
+        O(n^(log_2(5)))
+    b.
+        n, a=2, b=n-1, d=0 therefore master thm does not apply
+        O(2^n)
+    c.
+        n, a=9, b=3, d=2
+        O(n^2*log(n))
+    The runtime of part c is fastest as n becomes large, so I would choose it, although part a is not that much worsef
+
+Exercise 2.5.
+    a. theta(n^(log_3(2))
+    b. theta(n^(log_4(5))
+    c. theta(n)
+    d. theta(n^2*log(n))
+    e. theta(n^3*log(n))
+    f. theta(n^(3/2)*log(n))
+    g. theta(n)
+    h. theta(n^(c+1)
+    i. theta(n*c^n)
+    j. theta(n^2)
+    k. theta(log_2(n))
+Exercise 2.12.
+    depth =log_2(n) branching factor is 2
+    therefore 2^(log_2(n)+1)-1=2*n-1
+Exercise 2.17.
+    basically binary search, go to the middle, if index==value return, else if index is less than value, else go to second half, recurse
