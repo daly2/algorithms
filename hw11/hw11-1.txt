@@ -19,3 +19,5 @@ Exercise 2.20.
     first array as indexes, adding one to the second array.
     create a third array, populate it using the counts from the second array and the
     values from the first.
+    The lower bound doesnt apply because there are no comparisons, it simply iterates
+    through each array.
