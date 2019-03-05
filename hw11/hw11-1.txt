@@ -1,0 +1,21 @@
+Exercise 2.14.
+    Use merge sort, with a condition to drop any duplicate elements at the merge.
+Exercise 2.16.
+    use a variation of binary search.
+    using powers of 2 as indexes find a value greater than x, set n= that index,
+    and use binary search. this is log(n)+log(n) which is O(log(n)).
+
+Exercise 2.19.
+    a. nk^2
+    b. merge in a binary tree structure, as normal merge sort does,
+        this is nk*log(k)
+Explain the proof of the n log n lower bound for comparison-based sorting 
+algorithms in your own words.
+    If you look at it as a tree, there must be n comparisons, and log(n) levels
+Exercise 2.20.
+    using pigonhole sort
+    Take the array, find the max and min, make a new array of size M=max-min, and
+    all indexes =0, iterate through the first array, using the values from the 
+    first array as indexes, adding one to the second array.
+    create a third array, populate it using the counts from the second array and the
+    values from the first.
