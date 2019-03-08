@@ -7,7 +7,7 @@ class Stack{
     int MaxSize;
     int index;
     Stack(int MaxSize){
-        this->arr=new int[MaxSize];
+        this->arr= new int[MaxSize];
         this->MaxSize=MaxSize;
         this->index= 0;
     }

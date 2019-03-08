@@ -11,16 +11,16 @@ void printArray(vector<string> *vec)
 int bin_search(vector<string> *sorted, string * word)
 {
     int left = 0;
-    int right = sorted->size();
+    int right = sorted->size()-1;
     int middle = 0;
     while (left <= right)
     {
         middle = (left + right) / 2;
-        if (int(sorted->at(middle).at(0)) < word->at(0))
+        if (sorted->at(middle) < *word)
         {
             left = middle + 1;
         }
-        else if (int(sorted->at(middle).at(0)) > word->at(0))
+        else if (sorted->at(middle) > *word)
         {
             right = middle-1;
         }
@@ -41,7 +41,7 @@ int main()
                             "isle", "jeer", "kept", "lee", "me", "nope", "open", "peer"
                             "quiet", "rear", "steer", "tear", "up", "vector", "went",
                             "xa", "yes", "zee"};
-    string word ="zpple";
+    string word ="bat";
     if (verbose)
     {
         cout << "Input: ";
