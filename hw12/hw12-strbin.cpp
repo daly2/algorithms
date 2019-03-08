@@ -38,7 +38,7 @@ int main()
 {
     const int N = 100;
     vector<string> sorted={"apple","bat","cat","dog", "ear", "fear", "gear", "hear"
-                            "isle", "jeer", "kept", "lee", "me", "nope", "open", "peer"
+                            "isle", "jeer", "kept", "lee", "me", "nope", "open", "peer",
                             "quiet", "rear", "steer", "tear", "up", "vector", "went",
                             "xa", "yes", "zee"};
     string word ="bat";
