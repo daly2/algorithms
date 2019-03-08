@@ -1,0 +1,12 @@
+Exercise 2.11, page 73.
+    Well assume the base case, X,Y are 2X2 matricies, then this is the definition
+    of matrix multiplication. 
+    Induct on X, Y, and this is recursivly true for arbitrarily large matricies.
+Exercise 2.15.
+    use a for loop to put the value to the left of all the values greater than it
+    use another loop to put the value to the right of all values less than it
+    use pointers to split the array into 3 and return those
+Exercise 2.18, page 74.
+    if it uses comparison, it must be a tree, the tree will only have one leaf(The answer)
+    The deth of the tree will be log(n), because you must be splitting the array.
+    
