@@ -23,21 +23,23 @@ class Node
         point = pn;
         pre = post = 0;
         visit = false;
-        for (auto &it : graph)
+        auto it=graph.begin();
+        ++it;
+        for (;it!=graph.end();++it)
         {
-            auto path = find(it.begin(), it.end(), point);
-            if (*path == it.at(0))
+            auto path = find(it->begin(), it->end(), point);
+            if (*path == it->at(0))
             {
-                nextdoor.push_back(it.at(1));
+                nextdoor.push_back(it->at(1));
             }
-            else if (*path == it.at(1))
+            else if (*path == it->at(1))
             {
-                nextdoor.push_back(it.at(0));
+                nextdoor.push_back(it->at(0));
             }
         }
     }
 };
-void explore(vector<Node> * graph, Node *pos, int *count);
+void explore(vector<Node> *graph, Node *pos, int *count);
 
 int main()
 {
@@ -48,13 +50,15 @@ int main()
         nodes.emplace_back(data, i);
     }
     //vector<Node> path = dfs(nodes, 3, 7);
-    int * count;
-    *count=1;
-    vector <Node> * nenodes=&nodes;
+    int *count;
+    *count = 1;
+    vector<Node> *nenodes = &nodes;
     explore(nenodes, &nodes.at(0), count);
-    
-    for(auto it=nodes.begin();it!=nodes.end();it++){
-        cout<< it->point << " " <<it->pre << " " << it->post<< endl;
+
+    for (auto it = nodes.begin(); it != nodes.end(); it++)
+    {
+        explore(nenodes, &(*it), count);
+        cout << it->point << " " << it->pre << " " << it->post << endl;
     }
     return 0;
 }
@@ -94,11 +98,16 @@ vector<Node> dfs(vector<Node> nodes, int start, int end)
     return route;
 }*/
 
-void explore(vector<Node> * graph, Node *pos, int *count)
+void explore(vector<Node> *graph, Node *pos, int *count)
 {
+    if(pos->visit) return;
     pos->visit = true;
     pos->pre = *count;
     (*count)++;
+    if(pos->nextdoor.size()==0){
+        pos->post=*count;
+        return;
+    }
     for (auto it = pos->nextdoor.begin(); it != pos->nextdoor.end(); ++it)
     {
         if (!graph->at(*it).visit)
@@ -106,7 +115,7 @@ void explore(vector<Node> * graph, Node *pos, int *count)
             explore(graph, &graph->at(*it), count);
         }
     }
-    pos->post=*count;
+    pos->post = *count;
     (*count)++;
     return;
 }
