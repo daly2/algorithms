@@ -1,0 +1,13 @@
+
+Let us assume that f(n) is O(g(n)), and also that g(n) is O(f(n)).  Under these assumptions, is f(n) 
+necessarily Theta(g(n))?  Please write a proof or find a specific counter-example.
+
+Well theta(g(n)) is defined as being Omega(g(n)) and O(g(n)).
+We are given that f(n) is O(g(n)).
+We are also told that g(n) is O(f(n)), ie g(n)<=c*(f(n)) which if we move the c
+to the other side is c*(g(n))>=f(n) which is the definition of Omega, 
+therefore f(n) is Omega(g(n)).
+
+Since f(n) is O(g(n)) and f(n) is Omega(g(n)), f(n) is necessarily Theta(g(n)).
+
+1,000,000
