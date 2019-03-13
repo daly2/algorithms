@@ -10,4 +10,16 @@ therefore f(n) is Omega(g(n)).
 
 Since f(n) is O(g(n)) and f(n) is Omega(g(n)), f(n) is necessarily Theta(g(n)).
 
-1,000,000
+
+Exercise 3.6, page 96.
+    Assuming no loops (nodes connected to themselves).
+    The sum of the connections to each node is 2|E| because each e in E has 2 ends.
+Exercise 3.26, page 100.
+    a.  Well for a node to be reachable there must be a way in and a way out, as you must start and
+        end at the same place.
+    b.  Graphs where all nodes have even degree except the ends.
+    c.  Graphs where the indegree and outdegree match on all nodes except the ends, where they may be off by one.
+Exercise 3.27.
+    well there must be an even number of nodes of odd degree because edges to nowhere are not a thing.
+    a node has odd degree then there is gaurenteed to be a disjoint path out of it because any other
+    path through it must enter and exit.
