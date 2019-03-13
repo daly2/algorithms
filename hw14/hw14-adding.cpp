@@ -39,7 +39,7 @@ class Stack
     {
         size += 100;
         int *temp = new int[size];
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size-100; i++)
         {
             temp[i] = arr[i];
         }
