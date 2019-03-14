@@ -1,0 +1,24 @@
+Exercise 3.15 (one-way streets).
+    The map could be represented as a directed graph, and then DFS
+    could be used on it, starting from one point. Use the inverse of the
+    graph(all edges reversed) and repeat the search, if all nodes can be
+    reached in both versions, the city is usable.
+    dfs is linear, and 2*linear is also linear.
+    part b
+    using the same graph from earlier, but with the edges flipped, so
+    that edge direction is oppisite traffic direction, run a dfs from
+    city hall, if all points are reachable from city hall in this reversed
+    map, city hall is reachable from all points in the normal map.
+Exercise 3.18 (tree).
+    add a ancestor list to all nodes, start at the bottom, and work up.
+    adding to the necessary lists as necessary. 
+    this should be linear in the number of nodes, as it is n log n in
+    the number of nodes, and there are nodes on the trip up.
+
+    as for constant time access, each node could have a hash map of ancestors.
+
+Exercise 3.23 (all paths).
+    modified dfs, run in both directions.
+    dfs would have to be modified so that the only options that were ignored
+    on a backtrack would be the ones that had already been tried, but after it
+    was set on a new path it could do anything.
