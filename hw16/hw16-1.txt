@@ -1,7 +1,14 @@
-Exercise 3.4, page 96.
-
 Exercise 3.7
+    Dfs would be effective for detecting a bipartite graph. it could be run twice, the first time to sort altrenating between the groups
+    the second to look for illegal edges, and as dfs is linear, 2X dfs is also linear.
+    
+    well a cycle of odd length would mean an odd number of edges(and nodes), and back where you started,
+    which would not work when the edeges altrenate, as you must go v1=>v2=>v1.
+
+    3
 
 Exercise 3.12, page 97.
-
+    if {v,u} is a edge and post(u)<post(v) then v must be an ancestor of u because otherwise the edge would have been explored while at u,
+    and post(v) would be less than post(u).
 Exercise 3.16 - it's pretty meta.
+    use bfs, and the number of levels in the tree is the number of semesters it will take.
