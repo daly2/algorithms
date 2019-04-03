@@ -21,7 +21,7 @@ bool check_dup(Node that, vector<Node> &g)
 bool check(const Node pos)
 {
     if (pos.buck.at(2).current == 4
-        && pos.buck.at(3).current == 4
+        && pos.buck.at(3).current == 40
         && pos.buck.at(4).current ==4)
     {
         found = true;

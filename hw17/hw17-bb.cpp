@@ -20,7 +20,7 @@ bool check_dup(Node that, vector<Node> &g)
 
 bool check(const Node pos)
 {
-    if (pos.buck.at(0).current == 2 || pos.buck.at(1).current == 2)
+    if (pos.buck.at(0).current == 8 || pos.buck.at(1).current == 8)
     {
         found = true;
         cout << pos.buck.at(0).current << " " << pos.buck.at(1).current <<" "<< pos.buck.at(2).current << endl;
