@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#define inf 32767
+#define inf __INT_MAX__
 // #include <iterator>
 // #include <algorithm>
 //#include "pqueue.h"
@@ -75,7 +75,6 @@ class pqueue
     void insert(ipair add)
     {
         ls.push_back(add);
-
     }
     int getval(int key)
     {
@@ -158,7 +157,7 @@ void dij2(Graph &g, int start)
     st.first = start;
     st.second = 0;
     Q.decKey(st);
-    g.dist.at(start)=0;
+    g.dist.at(start) = 0;
     while (!Q.empty())
     {
         ipair u = Q.delMin();
@@ -185,19 +184,24 @@ void dij2(Graph &g, int start)
 int main()
 {
     int numV = 5;
+    vector<vector<int>> b{{17, 25, 35, 45, 5}, {17, 7, 81, 97, 10}, {10, 11, 12, 13, 14, 15}, {167, 17, 18, 19, 20}, {21, 22, 23, 24, 25}};
     vector<vector<int>> e(5);
     for (int i = 0; i < numV; i++)
     {
         for (int j = 0; j < numV; ++j)
         {
 
-            e.at(i).emplace_back(i+1*j);
+            e.at(i).emplace_back(i + j);
         }
-    }
-    Graph g(e);
-    dij2(g, 0);
+    } /*
     for(int i=0;i<numV; ++i){
-        cout<< "node "<< i << " is at distance: " << g.dist.at(i) << " and has parent: " << g.prev.at(i) <<endl;
+        e.at(0).at(i)=7;
+    }*/
+    Graph g(b);
+    dij2(g, 0);
+    for (int i = 0; i < numV; ++i)
+    {
+        cout << "node " << i << " is at distance: " << g.dist.at(i) << " and has parent: " << g.prev.at(i) << endl;
     }
     return 0;
 }
