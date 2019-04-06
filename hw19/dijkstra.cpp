@@ -8,35 +8,35 @@
 using namespace std;
 
 typedef pair<int, int> ipair;
-
-// class Node
-// {
-//   public:
-//     int point;
-//     vector<ipair> nextdoor;//first is neibour num, second is edge len
-//     Node * prev;
-//     int dist;
-//     Node(vector<vector<ipair>> graph, int pn)
-//     {
-//         point = pn;
-//         prev = NULL;
-//         auto it = graph.begin();
-//         //++it; for skipping the first line
-//         for (; it != graph.end(); ++it)
-//         {
-//             auto path = find(it->begin(), it->end(), point);
-//             if (*path == it->at(0))
-//             {
-//                 nextdoor.push_back(it->at(1));
-//             }
-//             else if (*path == it->at(1))
-//             {
-//                 nextdoor.push_back(it->at(0));
-//             }
-//         }
-//     }
-// };
-
+/*
+class Node
+{
+  public:
+    int point;
+    vector<ipair> nextdoor;//first is neibour num, second is edge len
+    Node * prev;
+    int dist;
+    Node(vector<vector<ipair>> graph, int pn)
+    {
+        point = pn;
+        prev = NULL;
+        auto it = graph.begin();
+        //++it; for skipping the first line
+        for (; it != graph.end(); ++it)
+        {
+            auto path = find(it->begin(), it->end(), point);
+            if (*path == it->at(0))
+            {
+                nextdoor.push_back(it->at(1));
+            }
+            else if (*path == it->at(1))
+            {
+                nextdoor.push_back(it->at(0));
+            }
+        }
+    }
+};
+*/
 class pqueue
 {
   public:
