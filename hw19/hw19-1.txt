@@ -1,0 +1,5 @@
+4.12
+    save e, and remove it from the graph
+    start dijkstra from one end of where e used to be
+    find the shortest path to the other end of where e used to be
+    add the length of e to that to get total length
