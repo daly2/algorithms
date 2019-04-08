@@ -8,9 +8,8 @@ using namespace std;
 
 vector<vector<int>> read(string filename);
 void write(string filename, vector<vector<int>> output);
-void write_cyc(string filename, vector<vector<int>> output);
 vector<int> dfs(vector<vector<int>> graph, int start, int end);
-const vector<int> primes{3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+
 class Node
 {
   public:
@@ -24,9 +23,9 @@ class Node
         point = pn;
         pre = post = 0;
         visit = false;
-        auto it = graph.begin();
+        auto it=graph.begin();
         ++it;
-        for (; it != graph.end(); ++it)
+        for (;it!=graph.end();++it)
         {
             auto path = find(it->begin(), it->end(), point);
             if (*path == it->at(0))
@@ -40,7 +39,7 @@ class Node
         }
     }
 };
-void explore(vector<Node> graph, Node pos, int count);
+void explore(vector<Node> *graph, Node *pos, int *count);
 
 int main()
 {
@@ -51,18 +50,16 @@ int main()
         nodes.emplace_back(data, i);
     }
     //vector<Node> path = dfs(nodes, 3, 7);
-    int count= 1;
+    int *count;
+    *count = 1;
     vector<Node> *nenodes = &nodes;
-    for (int i = 0; i < nodes.size(); ++i)
-    {
-        explore(nodes, nodes.at(i), count);
-    }
-    /*
+    explore(nenodes, &nodes.at(0), count);
+
     for (auto it = nodes.begin(); it != nodes.end(); it++)
     {
         explore(nenodes, &(*it), count);
         cout << it->point << " " << it->pre << " " << it->post << endl;
-    }*/
+    }
     return 0;
 }
 /*
@@ -101,27 +98,25 @@ vector<Node> dfs(vector<Node> nodes, int start, int end)
     return route;
 }*/
 
-void explore(vector<Node> graph, Node pos, int count)
+void explore(vector<Node> *graph, Node *pos, int *count)
 {
-    if (pos.visit)
-        return;
-    pos.visit = true;
-    pos.pre = count;
-    (count)++;
-    if (pos.nextdoor.size() == 0)
-    {
-        pos.post = count;
+    if(pos->visit) return;
+    pos->visit = true;
+    pos->pre = *count;
+    (*count)++;
+    if(pos->nextdoor.size()==0){
+        pos->post=*count;
         return;
     }
-    for (auto it = pos.nextdoor.begin(); it != pos.nextdoor.end(); ++it)
+    for (auto it = pos->nextdoor.begin(); it != pos->nextdoor.end(); ++it)
     {
-        if (!graph.at(*it).visit)
+        if (!graph->at(*it).visit)
         {
-            explore(graph, graph.at(*it), count);
+            explore(graph, &graph->at(*it), count);
         }
     }
-    pos.post = count;
-    (count)++;
+    pos->post = *count;
+    (*count)++;
     return;
 }
 
@@ -153,25 +148,6 @@ void write(string filename, vector<vector<int>> output)
 {
     std::ofstream outfile(filename);
     outfile << "p edge ";
-    for (auto const &value : output)
-    {
-        if (value == output.at(0))
-        {
-            outfile << value.at(0) << " " << value.at(1) << endl;
-            continue;
-        }
-        outfile << value.at(0) << "         " << value.at(1);
-        if (value != output.back())
-        {
-            outfile << endl;
-        }
-    }
-}
-
-void write_cyc(string filename, vector<vector<int>> output)
-{
-    std::ofstream outfile(filename);
-    outfile << "cycle";
     for (auto const &value : output)
     {
         if (value == output.at(0))
