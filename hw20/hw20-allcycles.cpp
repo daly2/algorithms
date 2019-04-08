@@ -6,15 +6,22 @@
 #include <algorithm>
 using namespace std;
 
+//  reads in dimacs format from input.txt
+//  outputs cycles into cycles.txt in the form of edges with a start and edge node
+//  individual cycles are seperated by the word "cycles"
+
+
 vector<vector<int>> read(string filename);
-void write(string filename, vector<vector<int>> output);
-void write_cyc(string filename, vector<vector<int>> output);
+void write_cyc(std::ostream & outfile, vector<int> output);
 vector<int> dfs(vector<vector<int>> graph, int start, int end);
 const vector<int> primes{3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+vector<int> product;
+
 class Node
 {
   public:
     int point;
+    int prime;
     vector<int> nextdoor;
     int pre;
     int post;
@@ -32,15 +39,28 @@ class Node
             if (*path == it->at(0))
             {
                 nextdoor.push_back(it->at(1));
-            }
+            } /*
             else if (*path == it->at(1))
             {
                 nextdoor.push_back(it->at(0));
-            }
+            }*/
         }
     }
 };
-void explore(vector<Node> graph, Node pos, int count);
+void explore(std::ostream & outfile, vector<Node> graph, int pos, int &count, vector<int> visited);
+
+bool check_dup(int pro)
+{
+    for (int i = 0; i < product.size(); ++i)
+    {
+        if (product.at(i) == pro)
+        {
+            return true;
+        }
+    }
+    product.emplace_back(pro);
+    return false;
+}
 
 int main()
 {
@@ -50,79 +70,53 @@ int main()
     {
         nodes.emplace_back(data, i);
     }
-    //vector<Node> path = dfs(nodes, 3, 7);
-    int count= 1;
-    vector<Node> *nenodes = &nodes;
     for (int i = 0; i < nodes.size(); ++i)
     {
-        explore(nodes, nodes.at(i), count);
+        nodes.at(i).prime = primes.at(i);
     }
-    /*
-    for (auto it = nodes.begin(); it != nodes.end(); it++)
+    int count = 1;
+    vector<int> visited;
+    std::ofstream outfile("cycles.txt");
+    for (int i = 0; i < nodes.size(); ++i)
     {
-        explore(nenodes, &(*it), count);
-        cout << it->point << " " << it->pre << " " << it->post << endl;
-    }*/
+        explore(outfile, nodes, i, count, visited);
+    }
     return 0;
 }
-/*
-vector<Node> dfs(vector<Node> nodes, int start, int end)
+int pro(const vector<int> visited, const vector<Node> g)
 {
-    int count = 1;
-    vector<Node> route;
-    route.push_back(nodes.at(start));
-    route.back().pre = count;
+    int pro = 1;
+    for (int i = 0; i < visited.size(); ++i)
+    {
+        pro *= g.at(visited.at(i)).prime;
+    }
+    return pro;
+}
+void explore(std::ostream & outfile, vector<Node> g, int pos, int &count, vector<int> visited)
+{
+    if (g.at(pos).visit)
+    {
+        int p = pro(visited, g);
+        if (!check_dup(p))
+        {
+            write_cyc(outfile, visited);
+        }
+        return;
+    }
+    g.at(pos).visit = true;
+    visited.emplace_back(pos);
+    g.at(pos).pre = count;
     count++;
-    while (true)
+    if (!g.at(pos).nextdoor.size())
     {
-        for (auto p = route.back().nextdoor.begin(); p != route.back().nextdoor.begin(); p++)
-        {
-            if (!nodes.at(*p).)
-            {
-                p->pre = count;
-                count++;
-            }
-        }
-    }
-    
-    while(!route.empty()){
-        Node p = route.back();
-        //route.pop_back();
-        if(!p.pre){
-            p.pre=count;
-            count++;
-            for(auto &n:p.nextdoor){
-                if()
-            }
-        }
-
-    }
-    
-    return route;
-}*/
-
-void explore(vector<Node> graph, Node pos, int count)
-{
-    if (pos.visit)
-        return;
-    pos.visit = true;
-    pos.pre = count;
-    (count)++;
-    if (pos.nextdoor.size() == 0)
-    {
-        pos.post = count;
+        g.at(pos).post = count;
+        count++;
         return;
     }
-    for (auto it = pos.nextdoor.begin(); it != pos.nextdoor.end(); ++it)
+    for (auto it = g.at(pos).nextdoor.begin(); it != g.at(pos).nextdoor.end(); ++it)
     {
-        if (!graph.at(*it).visit)
-        {
-            explore(graph, graph.at(*it), count);
-        }
+        explore(outfile, g, *it, count, visited);
     }
-    pos.post = count;
-    (count)++;
-    return;
 }
 
 vector<vector<int>> read(string filename)
@@ -145,44 +139,20 @@ vector<vector<int>> read(string filename)
         input.at(i).at(1) = c;
         i++;
     }
-
+    infile.close();
     return input;
 }
 
-void write(string filename, vector<vector<int>> output)
+void write_cyc(std::ostream & outfile, const vector <int> visited)
 {
-    std::ofstream outfile(filename);
-    outfile << "p edge ";
-    for (auto const &value : output)
-    {
-        if (value == output.at(0))
-        {
-            outfile << value.at(0) << " " << value.at(1) << endl;
-            continue;
-        }
-        outfile << value.at(0) << "         " << value.at(1);
-        if (value != output.back())
-        {
-            outfile << endl;
-        }
+    if(!outfile.good()){
+        cout<<"whoopsie\n";
+        return;
     }
-}
-
-void write_cyc(string filename, vector<vector<int>> output)
-{
-    std::ofstream outfile(filename);
-    outfile << "cycle";
-    for (auto const &value : output)
+    outfile << "cycles\n";
+    for (int i = 0; i < visited.size() - 1; ++i)
     {
-        if (value == output.at(0))
-        {
-            outfile << value.at(0) << " " << value.at(1) << endl;
-            continue;
-        }
-        outfile << value.at(0) << "         " << value.at(1);
-        if (value != output.back())
-        {
-            outfile << endl;
-        }
+        outfile << visited.at(i) << "         " << visited.at(i + 1) << endl;
     }
+    outfile << visited.at(visited.size() - 1) << "         " << visited.at(0) << endl;
 }

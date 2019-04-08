@@ -1,7 +1,13 @@
 Exercise 4.13, page 121.
-    DFS, with a limit on the cost of individual edeges.
+    DFS, with a limit on the cost of individual edges.
 
-    Dijkstras, with a binary heap as a pqueue, run in a loop 
+    DFS, with a preference for the lowest cost edges.
 Exercise 4.15, page 122.
+    Dijkstras with a modification to check if the update to a distance to a node is equal to the
+    origional distance
 
 Exercise 4.21, page 125.
+    Bellman-Ford, with the rij*rji-1 as the edge cost
+
+    Bellman-Ford, with V checks instead of v-1, if there is a change in the last update, there is a negative cycle,
+    and the opertunity for Profit!
