@@ -1,0 +1,7 @@
+Exercise 4.13, page 121.
+    DFS, with a limit on the cost of individual edeges.
+
+    Dijkstras, with a binary heap as a pqueue, run in a loop 
+Exercise 4.15, page 122.
+
+Exercise 4.21, page 125.
