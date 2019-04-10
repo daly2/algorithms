@@ -1,3 +1,15 @@
+Exercise 3.4, page 96.
+    a 
+    bi source e
+      sink   j
+    ci  jcdf
+        
+    di
+
+    aii
+    bii
+    cii
+    dii
 Exercise 3.7
     Dfs would be effective for detecting a bipartite graph. it could be run twice, the first time to sort altrenating between the groups
     the second to look for illegal edges, and as dfs is linear, 2X dfs is also linear.
