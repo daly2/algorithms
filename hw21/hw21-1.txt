@@ -1,3 +1,12 @@
 Exercise 5.1ab, page 148.
+    AE
+    EF
+    FB
+    FG
+    GH
+    GC
+    GD
 
+    2
 Exercise 5.4, page 148.
+    Well with k connected components, each component may be considered a graph, and as a graph with 1 vertex has at least 0 edeges and a graph with 2 vertacies has at least one edge, each component must have at least k-1 edges
