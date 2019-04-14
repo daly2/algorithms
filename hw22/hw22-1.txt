@@ -1,0 +1,33 @@
+
+Exercise 5.1c, page 148.
+AE  A vs rest
+EF  A,E vs rest
+EB  A,E,F, vs rest
+FG  A,E,F,B vs rest
+GH  A,E,F,B,G vs rest
+GC  C,D vs rest
+GD  D vs rest
+
+Exercise 5.3.
+run dfs to detect any back edges, any back edge is unnecessary for a spanning tree
+Exercise 5.6.
+    as the MST has exactly |V|-1 edges, that are added least cost first, 
+    if all the edge weights are distinct there is only one order that they can be
+    added in
+Exercise 5.13.
+    A 31=10
+    C 20=110
+    G 9=111
+    T 40=0
+
+      100
+     /  \
+    T    60
+        /    \
+        A    29
+            | \
+            C  G
+
+Exercise 5.14.
+    a
+    
