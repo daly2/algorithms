@@ -187,7 +187,7 @@ string decode(const vector<bool> bin, vector<int> freq)
     vector<bool> chbin;
     for (int i = 0; i < bin.size(); ++i)
     {
-        chbin.emplace_back(bin.at(i));
+        chbin.push_back(bin.at(i));
         char c = decodeChar(codes, chbin);
         if (c > -1)
         {
