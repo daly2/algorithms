@@ -1,0 +1,33 @@
+Exercise 5.32, page 154.
+kriscols, find the mst allowing the shortest waits
+Exercise 5.33.
+create a node per literal with edges to any node that it implies
+set all nodes to false
+
+void explore()
+    if there is an unsatisfied implication,
+        set the thing it implies true
+        if they imply anything
+            explore()
+
+graph of nodes with all implications as edges, in the oppisite direction
+
+list of all implications
+graph of all nodes with implications as edges
+while there is an implication that is not satisfied
+    set the right hand variable to true, and update the list of implications as necessary
+    the edges tell which ones may need to be updated
+if all negatives are satisfied, return
+else unsatisfiable
+
+Exercise 5.34, page 155.  Feel free to consider n to be two less than a power of two.
+Show that for any integer n that is a power of 2, there is an instance of the set cover problem
+(Section 5.4) with the following properties:
+i. There are n elements in the base set.
+ii. The optimal cover uses just two sets.
+iii. The greedy algorithm picks at least log n sets.
+Thus the approximation ratio we derived in the chapter is tight.
+
+i. let there be n towns
+ii. The towns are in one cluster, that is made of two overlapping circles
+iii. each school must cover >= half of the uncovered nodes, so there must be log n nodes
