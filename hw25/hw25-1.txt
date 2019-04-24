@@ -1,0 +1,42 @@
+Exercise 6.1, page 177.)
+sum=0
+max=0
+poss=0
+start,pstart=0
+for i in list:
+    sum+=list[i]
+    arr[i]=sum
+    poss+=list[i]
+    if(sum<0):
+        poss=0
+        pstart=i
+    if(poss>max):
+        max=poss
+        start=pstart
+
+return list[start] through list[start+max]
+
+Exercise 6.2.)
+for i in hotels
+    j= hotel with min(i.nextdoor.cost+cost to i)
+    cost to i=cost to j+j to i
+    i.prev=j
+then pointer chase i.prev until at the start for the overall list
+
+Exercise 6.3.)
+    max=0
+    index=i
+    for i in locations
+        h=max(nodes 0 to i.dist-k)
+        i.poten=h.poten+pi
+        i.prev=h
+        if(i.poten>max):
+            max=i.poten
+            index=i
+    locations[index] is the start of a linked list of the optimal config
+
+Exercise 6.8, page 179.)
+    use an mxn array to represent lengths of substrings ending there
+    iterate through x
+        find a match for xi in y(or dont)
+            check if the previous chars match
