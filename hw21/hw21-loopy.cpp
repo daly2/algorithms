@@ -40,7 +40,7 @@ vector<vector<int>> read(string filename)
     int nvert, nedges;
     std::ifstream infile(filename);
     infile >> nvert >> nedges;
-    vector<vector<int>> input(nedges + 1, vector<int>(2));
+    vector<vector<int>> input(nedges + 2, vector<int>(2));
     input.at(0).at(0) = nvert;
     input.at(0).at(1) = nedges;
     int i = 1;
