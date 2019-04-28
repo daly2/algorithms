@@ -13,3 +13,5 @@
 *.o
 *.json
 **/.vscode
+a.out
+

@@ -1,0 +1,5 @@
+agnar
+anagram
+
+exponential
+polynomial
