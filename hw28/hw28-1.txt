@@ -1,5 +1,49 @@
 Exercise 6.5 (page 178)
+    We are given a checkerboard which has 4 rows and n columns, and
+    has an integer written in each square. We are also given a set of 2n pebbles, and we want to
+    place some or all of these on the checkerboard (each pebble can be placed on exactly one square)
+    so as to maximize the sum of the integers in the squares that are covered by pebbles. There is
+    one constraint: for a placement of pebbles to be legal, no two of them can be on horizontally or
+    vertically adjacent squares (diagonal adjacency is fine).
+        (a) Determine the number of legal patterns that can occur in any column (in isolation, ignoring
+        the pebbles in adjacent columns) and describe these patterns.
+        
+        there are 8 legal patterns, 1 with no pebbles, 4 with one pebble, 3 with two pebbles
+
+    Call two patterns compatible if they can be placed on adjacent columns to form a legal placement.
+    Let us consider subproblems consisting of the first k columns 1 ≤ k ≤ n. Each subproblem can
+    be assigned a type, which is the pattern occurring in the last column.
+        (b) Using the notions of compatibility and type, give an O(n)-time dynamic programming 
+        algorithm for computing an optimal placement.
+
+        create a 8xn matrix, one row for each of the possible states per row in the origional grid
+        starting at the left, find populate the matrix with the max values attainable by that pattern
+        ie. calculate the value of a pattern, then add the max compatible value from the previous column.
+        the highest value in the last column is the answer
+        this will take theta(8n) ie. theta(n).
+
 
 Exercise 6.7 (page 179)
+    A subsequence is palindromic if it is the same whether read left to right or right to left. For instance, the sequence
+    A, C, G, T, G, T, C, A, A, A, A, T, C, G
+    has many palindromic subsequences, including A, C, G, C, A and A, A, A, A (on the other hand, the subsequence A, C, T is not palindromic).
+    Devise an algorithm that takes a sequence x[1 . . . n] and returns the (length of the) longest palindromic subsequence.
+    Its running time should be O(n^2).
+
+    n+1xn+1 matrix, first row and column are filled with 0
+    have the origional word accross the top, and the reversed word down the side
+    fill the matrix left to right, top to bottom, if the letters at the indicies match and the indicies add up to n, take the value up and left and add 1
+    else if the letters match but i+j!=n, take the value up and to the left and add 2
+    else 0
+    then the largest value in the matrix is the length of the longest palindrome, and the palindrome itself can be backtraced
+
+    this doesnt work, misses the noncontigous subsequences
+
 
 Exercise 6.16 (page 181)
+    The garage sale problem (courtesy of Professor Lofti Zadeh). On a given Sunday morning, there are n garage sales going on, g1, g2, . . . , gn.
+    For each garage sale gj , you have an estimate of its value to you, vj . For any two garage sales you have an estimate of the transportation
+    cost dij of getting from gi to gj . You are also given the costs d0j and dj0 of going between your home and each garage sale. 
+    You want to find a tour of a subset of the given garage sales, starting and ending at home, that maximizes your total benefit minus your total
+    transportation costs. Give an algorithm that solves this problem in time O(n^2*2^n). 
+    (Hint: This is closely related to the traveling salesman problem.)
