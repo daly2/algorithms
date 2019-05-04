@@ -1,0 +1,23 @@
+Exercise 6.18, page 181.
+    This is knapsack without repitions, and with the added constraint of having to fill it exactly.
+    Create a n+1xv+1 matrix of bool. Each space will represent wether or not you can make that change with the coins up to that point.
+    The question is, what valuse can we achive with i coins, i=0 i<=n
+    This can build off the previous answer by using if(t[i-1][j]||t[i-1][j-xn]) where xn is the value of the denomination at i.
+Exercise 6.20, page 182.
+    Use the subproblem what is the optimal tree for the  i-j elements of the list i=0, i<n, j=0, j<n. 
+    table= a nxn table of pairs of values, one for root index, other for cost of tree
+    Len=1
+    while(Len<n)
+        for each substring of words of size Len
+            i is the first
+            j is i+Len-1
+            table[i][j]=Sum(prob[i...j])+min(cost of each node as root)
+            (cost of each node as root is caluculated based off the other values in the table)
+            Len++
+    then, using the value for root index in the table, the overall tree may be traced back.
+    (ie, the root of each subtree).
+Exercise 6.24ab, pages 183,184.
+    a.
+        well, as you only need the previous row of the table, and the one you are currently filling, the rest can be dropped, and this is linear in n
+    b.
+        simply return the index of the minimum value in row m/2
