@@ -1,0 +1,39 @@
+Exercise 7.1, page 222.
+    7|
+    6|
+    5|        25
+    4|             27
+    3|                29
+    2|    11              31----optimal
+    1|                    28
+    0|0___________________25__
+       0   1   2   3   4   5
+Exercise 7.3, page 222.
+    M1 2t/m^3, M1<=40, $1000/m^3
+    M2 1t/m^3, M2<=30, $1200/m^3
+    M3 3t/m^3, M3<=20, $120000/m^3
+
+    M1,M2, M3>=0
+    max(M1*1000+1200*M2+120000*M3)
+    M1+M2+M3<=60
+
+
+Suppose you have a map with the positions of ten cities, and you want to decide where to build
+a set of supply centers for your business.  Each supply center will be in a city, but a supply center
+can also supply one or more other cities, provided each other city is no more than 50 miles away.
+How can you figure out the minimum number of supply centers necessary?  What would you do if there
+are thousands of cities, instead of just ten?)
+    
+
+Exercise 7.2, page 222.
+    KN,KC,MN,Mc>=0
+    KN<=10
+    Kc<=13
+    KC+KN<=15
+    MN<=8
+    MC<=8
+    MN+MC<=8
+    MN+KN<=10
+    KC+MC<=13
+    Min(4*MN+MC+2KN+3KC)
+
