@@ -1,0 +1,4 @@
+6.6
+Using the question of what possible result can I get from the first i values, i=0, i<=n.
+This would allow constant memory usage, only needing to store up to 3 values in addition to the string itself, and theta(n) time
+as it would only require up to 3 operations per character.
