@@ -30,7 +30,7 @@ Exercise 7.17.
         SA=5
         AT=5
     e.
-    In the residual graph, any back edge that does not have a coresponding forward edge is a potential bottleneck
+    In the residual graph, any back edge that does not have a coresponding forward edge is a potential bottleneck, and if it is the only missing forward edge on a path it is a bottleneck.
 
 Exercise 7.18.
     a. Pick one source as the main one, and put edges with infinite capacity to all the other sources
