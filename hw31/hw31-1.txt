@@ -3,11 +3,38 @@ to the end of section 7.2.
 Please skim section 7.6, the simplex algorithm.
 
 Exercise 7.8.
-
+    k=max|axi+byi-c| for i 1-7
+    k>=|axi+byi-c| for i 1-7
+    k>=0
 Exercise 7.9.
-
-Exercise 7.10.
+    max(-1*(x1^2+x2^2+6)
+    x1<=-1
+    x2>=-1
+Exercise 7.10
+    13
+    divided into the set containing S,C,F, and the other set, there is only a capacity of 13 from set with S to set with T
 
 Exercise 7.17.
+    a. f=11 AC,BC,DT
+    b.
+          A____C
+        6/2\ 2/6\
+        S   \/   T
+        5\  / \5/
+          B__3_D
+        This is a graph of the capacity used, the residual graph would be all of these as back edges, and the origional edges minus these as forward edges.
+        I was not able to find a good way to display all of that in a txt though...
+
+    c. BC, AC
+    d. S-A-T
+        SA=5
+        AT=5
+    e.
+    In the residual graph, any back edge that does not have a coresponding forward edge is a potential bottleneck
 
 Exercise 7.18.
+    a. Pick one source as the main one, and put edges with infinite capacity to all the other sources
+        Do the same for the sinks, pick one, and give all the others infinite capacity to it
+    b. Seperate the in and out edges of each vertex to two seperate verticies, with an edge of the given capacity connecting them
+    c. just add the constraint that edge i must carry x
+    d. in u, multiply the flow by epsilon_u, before sending it to the out edges.
