@@ -1,0 +1,8 @@
+exercise 8.1
+
+i=n
+while(TSP(graph, i)){
+    --i;
+}
+will solve TSP-OPT in O(n*(O(TSP)))=O(n*TSP)=O(n*polynomial)=O(polynomial).
+ie. another factor of n will not move it from polynomial to exponential.
