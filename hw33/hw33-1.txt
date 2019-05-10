@@ -1,0 +1,45 @@
+Exercise 8.2, page 264.
+run the algorithm,
+    if a path is found
+        delete an edge
+        if a path is still found
+            repeat
+        else
+            add that edge back
+
+Exercise 8.3.
+SAT is np complete, and this is simply a harder version of SAT, as we have a maximum number of variables that can be true
+
+Exercise 8.5.
+
+
+Exercise 8.10, page 266.
+    a. assuming that the graph is connected, isomorphism involves finding the longest path in G, and finding a matching path in H
+
+    b.  as longest path is NP-complete, we must show a reduction to longest path.
+    Well, run the algorithm with g=0 up until it doesnt find a path anymore, and you have longest path in up to |G|*runtime of path of length g. and longest path is np complete, so this is too.
+
+    c.  As SAT is np complete, and this is the same as SAT if g is sufficiently large, this is np complete
+
+    d.  This is a generalization of the clique problem, as when b is sufficiently large, they are the same
+
+    e.  This is another generalization of the Clique problem, but based on the inverse of the graph, so that it finds minimally connected regions, rather than maximally connected ones.
+
+    f.  This is the same as Vertex cover and independent set
+    just the inverse of independent set
+
+    g.  This is ILP, as we have conditions that must be satisfied with integers, The only difference is instead of trying to maximize something, we are trying to meet some goal.
+    if we set the goal sufficiently high, or we raise it each time we achive it, then it is the same problem.
+
+Exercise 8.13, page 267.
+    a.  well, finding a spanning tree is p, and you could start a dynamic programming solution from each of the leaves, then combine, so P.
+
+    b.  Similar to above, a dynamic programming solution building up from the leaves would be P.
+
+    c. Similar to above, a dynamic programming solution, which started at each node in L, but was allowed to attach trees to the bottom of other subtrees, P.
+
+    D.  Well, as the worst case is K=1, this is transformable to Rudrata path, so NP.
+
+    E.  Well, this is ILP, as if k is sufficiently large, we are simply maximizing it within our constraints
+
+    F.  If K=1, then it is Rudrata path, which is NP, so the general case must also be NP.
