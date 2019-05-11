@@ -10,8 +10,9 @@ run the algorithm,
 Exercise 8.3.
 SAT is np complete, and this is simply a harder version of SAT, as we have a maximum number of variables that can be true
 
-Exercise 8.5.
 
+Exercise 8.5.
+Well, by the book 3D matching reduces to 3 SAT and 
 
 Exercise 8.10, page 266.
     a. assuming that the graph is connected, isomorphism involves finding the longest path in G, and finding a matching path in H
