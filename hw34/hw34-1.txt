@@ -20,7 +20,7 @@ Exercise 9.3, page 293.
     
     Subproblems can be expanded by looking at a subset of each set
 
-    the lower bound is a 
+    the lower bound is the mst for each set
 Design an algorithm to list all possible subsets of a set of n elements, in
 sufficient detail that you could easily implement it in C++.
     set all values in list G to false
