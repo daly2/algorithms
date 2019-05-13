@@ -1,0 +1,49 @@
+Please read the beginning of chapter 9, up to the end of section 9.1
+Please read the beginning of section 9.3, up to (but not including 9.3.2
+
+Exercise 9.1, page 293.
+    well as this is simply a series of 2SAT problems, and 2SAT is polynomial, this is also polynomial.
+    2SAT is polynomial because there are only 2 literals to pick values for.
+
+Exercise 9.2, page 293.
+    subproblem is path from index 0 to i i=1 to i=n 
+
+    pick any neibour of your starting index, and create a tree
+
+    expand a subproblem by exploring a node, and finding all the paths from there
+
+    if you encounter a cycle, backtrack, and ignore that subtree
+
+    This is reasonable, as it is complete, and it can be significantly faster than random as it is simply stops considering subtrees once they are infeasible
+Exercise 9.3, page 293.
+    subproblem is set cover for i verticies
+    
+    Subproblems can be expanded by looking at a subset of each set
+
+    the lower bound is a 
+Design an algorithm to list all possible subsets of a set of n elements, in
+sufficient detail that you could easily implement it in C++.
+    set all values in list G to false
+    count =0
+    Subset(G, count)
+        (where count is an index in G)
+        if (count==n)
+            return G
+        Subset(G, count+1)
+        G.at(count)=true
+        Subset(G, count+1)
+
+
+Design an algorithm for enumerating all k-element subsets of
+a set of n elements, in such a way that the running time is proportional to
+the number of relevant subsets, rather than 2 ^ n
+
+    same as above
+    set all values in G to false
+    count=0
+    Subset(G, count)
+        if(count==k)
+            return G
+        Subset(G, count+1)
+        G.at(count)=true
+        Subset(G, count+1)
