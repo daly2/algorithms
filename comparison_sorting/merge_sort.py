@@ -2,7 +2,7 @@ import random
 
 ls = [random.randrange(1,5000,1) for i in range(1000)]
 
-def merge(ls1:[], ls2:[]):
+def merge(ls1:[], ls2:[]) -> []:
     comb = []
     i = j = 0
     for k in range(len(ls1)+len(ls2)):
