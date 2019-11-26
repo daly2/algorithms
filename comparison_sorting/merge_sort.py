@@ -20,15 +20,13 @@ def merge(ls1:[], ls2:[]) -> []:
             i+=1
     return comb
 
-def merge_sort2(ls: [], count) -> []:
-    if(count>17):
-        return [-2]
+def merge_sort2(ls: []) -> []:
     if(len(ls)>1):
         mid = len(ls)//2
-        left = merge_sort2(ls[:mid], count+1)
-        right = merge_sort2(ls[mid:], count+1)
+        left = merge_sort2(ls[:mid])
+        right = merge_sort2(ls[mid:])
         return merge(left, right)
     else:
         return ls
 
-print(merge_sort2(ls, 0))
+print(merge_sort2(ls))
